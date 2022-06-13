@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coursework 3">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Anirudra Mohan Shrestha">
+    <link  rel="stylesheet" type="text/css" href="./CSS/style.css">
+    <script src="https://kit.fontawesome.com/c80159345b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Homepage</title>
+    <script>
+        let name = prompt("Enter your name to visit the website")
+        console.log(name);
+    </script>
+</head>
+<body>
+    <style>
+        /* Animation loading */
+            .load{
+                animation: slide 5s;
+            }
+            /* Background slides */
+            .slide{
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                width: 100%;
+                height: 100vh;
+                animation: slide 9s infinite;
+            }
+            /* Subtle dark overlaying in the slide */
+            .overlay{   
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgb(56, 55, 55);
+                mix-blend-mode: overlay;
+
+            }
+
+            #navbar ul li a.active{
+                letter-spacing: 3px;
+                font-size: 25px;
+                color: rgb(238, 215, 12);
+                cursor: pointer;
+            }
+            /* Content styling */
+            .content{
+                color: #fff;
+                width: 100%;
+                height: 100%;
+                height: 100vh; 
+            }
+
+            .principal{
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                position: absolute;
+            }
+
+            h1{
+                font-family: 'Poppins', sans-serif;
+                font-size: 70px ;
+                margin-bottom: 20px;
+                letter-spacing: 5px;
+            }
+
+            p{
+                font-size: 28px;
+            }
+
+            /* Button styling */
+            .btn{
+                margin-top: 20px;
+                width: 150px;
+                border: none;
+                height: 45px;
+                font-size: 15px;
+                font-weight: 600;  
+                border-radius: 35px; 
+            }
+            .btn:hover{
+                background-color: rgb(184, 180, 180);
+                box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.5);
+                color: white;
+                cursor: pointer;
+                letter-spacing: 2px;
+                font-size: 16px ;
+                border: 1px;
+                color: rgb(255, 255, 255);
+            }
+            .btn a{
+                text-decoration: none;
+                color: black;
+            }
+            .btn a:hover{
+                letter-spacing: 2px;
+                font-size: 16px ;
+                border: 1px;
+                color: rgb(255, 255, 255);
+                
+            }
+            
+
+            /* Settings for slides and animation */
+            @keyframes slide{
+                0%{
+                    background-image: url('./Images/jbl1.jpg');
+                }
+                35%{
+                    background-image: url('./Images/jbl1.jpg');
+                }    
+                35.01%{
+                    background-image: url('./Images/iphone1.png');
+                }
+                75%{
+                    background-image: url('./Images/iphone1.png');
+                }
+                75.01%{
+                    background-image: url('./Images/laptop.png');
+                }
+                100%{
+                    background-image: url('./Images/laptop.png');
+                }
+            }
+    </style>
+    
+    <!-- Making slide as the main body of the webpage -->
+    <div class="slide">
+        <div class="load">
+        </div>
+            <!-- Overlaying for darkening background slides -->
+            <div class="overlay"></div>
+            <div class="content">
+
+                <!-- Division for navigation Bar within the slide -->
+                <div id="navbar">
+                    <nav>
+                        <!-- Division for Name logo -->
+                        <div class="logo">E-commerce</div>
+                        <ul>
+                            <!-- Division for Navigation Bar: listings -->
+                            <li><a class="active" href="#">Home</a></li>
+                            <li><a href="Product.html">Product</a></li>
+                            <li><a href="Blog.html">Blog</a></li>
+                            <li><a href="Contact.html">Contact Us</a></li>
+                            <li><a href="Research.html">Reference</a></li>
+                        </ul>
+                        <!-- Shopping bag icon -->
+                        <a href="Product.html"><i class="fas fa-shopping-bag" style="font-size: 30px; color:#fcfcfc"></i></a>  
+                    </nav>
+                </div>
+                
+                <!-- Main texts and features of the content -->
+                <div class="principal">
+                    <h1>New year, New you.</h1>
+                    <p>The new tech gift you are wishing for is right here.</p>
+                    <!-- Button -->
+                    <button class="btn"><a href="Product.html">Explore Now</a></button>
+                </div>
+
+                <!-- Division for footer within the slide -->
+                <footer>
+                    <!-- Social Medias -->
+                    <div class="socials" style="bottom: 10px;">
+                        <ul>
+                            <!-- Logo Image of facebook, instagram and twitter -->
+                            <li><a href="https://www.facebook.com/aanirudraa/"><img src="./Images/img1.png"></a></li>
+                            <li><a href="https://www.instagram.com/aanirudraa/"><img src="./Images/img2.png"></a></li>
+                            <li><a href="https://twitter.com/?lang=en"><img src="./Images/img3.png"></a></li>
+                        </ul>
+                        <!-- Trademarks -->
+                        <p style="color: white;">&copy; 2022 Anirudra Mohan Shrestha. All Rights Reserved.</p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

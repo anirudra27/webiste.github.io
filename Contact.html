@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coursework 3">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Anirudra Mohan Shrestha">
+    <link  rel="stylesheet" type="text/css" href="./CSS/style.css">
+    <script src="https://kit.fontawesome.com/c80159345b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <script src="./JS/script.js"></script>
+    <title>Contact Us</title>
+</head>
+<body>
+    <style>
+        /* Font family import from google fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
+
+        /* Background image */
+        body{
+            background: url('./Images/pic2.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* overlay for darkeing the bg image */
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgb(56, 54, 54);
+            mix-blend-mode: overlay;
+        }
+
+        /* Styling of navigation bar */
+        #navbar{
+            position:absolute;
+            background: #fff;
+            height: 1px;
+        }
+        #navbar .logo{
+            color: black;
+        }
+        #navbar ul li a{
+            color: black;
+        }
+        #navbar ul li a:hover{
+            color: rgb(238, 215, 12);
+            cursor: pointer;
+        }
+        #navbar ul li a.active{
+            letter-spacing: 3px;
+            font-size: 25px;
+            color: rgb(238, 215, 12);
+            cursor: pointer;
+        }
+        
+
+        /* Styling maain section of the website */
+        section{
+            position: relative;
+            width: 400px;
+            margin: 130px auto 0px auto;
+        }
+
+        h1{
+            font-family: 'Patua One', sans-serif;
+        }
+
+        .main{
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0,3);
+            box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+            color: white;
+            z-index: 1000;
+            margin-bottom: 30vh;
+        }
+        /* Styling form table */
+        table{
+            margin: 40px;
+        }
+        
+        table td{
+            font-family: 'Poppins', sans-serif;
+        }
+
+        input,
+        textarea{
+            margin-bottom: 10px;
+            width: 200px;
+            border: 1px sloid #ddd;
+            border-radius: 3px;
+            outline: 0px;
+            padding: 7px;
+            box-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input#submit{
+            width: 150px;
+            padding: 7px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            border: none;
+            border-radius: 3px;
+            color: rgb(10, 10, 10);
+            cursor: pointer;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        input#submit:hover{
+            width: 180px;
+            letter-spacing: 3px;
+            box-shadow:2px 2px 15px rgba(255, 255, 255, 0.5); ;
+        }
+
+        footer{
+            position: relative;
+            bottom: 20px;
+        }
+
+    </style>
+
+    <!-- Overlay for darkening background theme -->
+    <div class="overlay"></div>
+        <header >
+            <!--  Division for navigation Bar -->
+            <div id="navbar">
+                <nav >
+                    <!-- Division for Name logo -->
+                    <div class="logo">E-commerce</div>
+                    <ul>
+                        <!-- Division for Navigation Bar: listings -->
+                        <li><a href="Home.html">Home</a></li>
+                        <li><a href="Product.html">Product</a></li>
+                        <li><a href="Blog.html">Blog</a></li>
+                        <li><a class="active" href="Contact.html">Contact Us</a></li>
+                        <li><a href="Research.html">Reference</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Form Section -->
+        <section>
+            <div class="main">
+                <h1 style="text-align: center;">Connect with Us</h1>
+                <div>
+                    <!-- Form using table tag -->
+                    <table>
+                        <tr><td>Full Name<td><input id="name" type="text"></td></tr>
+                        <tr><td>E-mail<td><input id="email" type="E-mail"></td></tr>
+                        <tr><td>Phone Number<td><input id="num" type="number"></td></tr>
+                        <tr><td>Description<td><textarea id="message" rows="5" cols="50" placeholder="Leave a message"></textarea></td></tr>
+                        <tr><td><td><input id="submit" onclick="validation()" type="submit"></td></tr>
+                    </table>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- Social Medias -->
+        <div class="socials">
+            <ul>
+                <!-- Logo Image of facebook, instagram and twitter -->
+                <li><a href="https://www.facebook.com/aanirudraa/"><img src="./Images/img1.png"></a></li>
+                <li><a href="https://www.instagram.com/aanirudraa/"><img src="./Images/img2.png"></a></li>
+                <li><a href="https://twitter.com/?lang=en"><img src="./Images/img3.png"></a></li>
+            </ul>
+            <!-- Trademarks -->
+            <p style="color: white;">&copy; 2022 Anirudra Mohan Shrestha. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coursework 3">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Anirudra Mohan Shrestha">
+    <link  rel="stylesheet" type="text/css" href="./CSS/style.css">
+    <script src="https://kit.fontawesome.com/c80159345b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css">
+    <title>Product</title>
+    
+</head>
+<body>
+    <style>
+        /* Positioning of banner */
+        .banner{
+            position: relative;
+            width:100%;
+            height: 150vh;
+            top: -150px;
+            background: url('./Images/laptop3.jpg');
+            background-size:cover ;
+        }
+        /* Styling of navigation after implying js */
+        
+        #navbar ul li a.active{
+            letter-spacing: 3px;
+            font-size: 25px;
+            color: rgb(238, 215, 12);
+            cursor: pointer;
+        }
+        #navbar.sticky{
+            padding: 5px 100px;
+            background: #fff;
+        }
+        
+        #navbar.sticky .logo{
+            color: black;
+        }
+        #navbar.sticky ul li a{
+            color: black;
+        }
+        #navbar ul li a.active{
+            letter-spacing: 3px;
+            font-size: 25px;
+            color: rgb(238, 215, 12);
+            cursor: pointer;
+        }
+        #navbar.sticky ul li a:hover{
+            color: rgb(238, 215, 12);
+            cursor: pointer;
+        }
+        .sticky .fas{
+            color: black !important ;
+        }
+
+        /* Styling search box */
+        .search-box{
+            display: flex ;
+
+        }
+        .search-box img{
+            width: 30px;
+            height: 28px;
+            filter: invert(1);
+            position: relative;
+            left: 82px;
+            top: 2px;
+            padding: 10px;
+            background-color: rgb(27, 26, 26);
+            border-radius: 30px;
+        }
+        /* Styling of heading 2 */
+        h2{
+            text-align: center;
+            margin: 50px auto 50px;
+            position: relative;
+            line-height: 60px;
+            font-family: 'Poppins', sans-serif;
+        }
+        h2::after{
+            content: '';
+            position: absolute;
+            background: black ;
+            width: 150px;
+            height: 3px;
+            border-radius: 5px;
+            bottom: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Styling of the class container containing product contents */
+        .container{
+            display: flex;
+            max-width: 1080px;
+            margin: auto;
+            padding-left: 25px;
+            padding-right: 25px;
+            font-family: 'Poppins', sans-serif;
+            flex-wrap: wrap;
+        }
+
+        /* Styling of the class small-container containing individual product contents */
+        .small-container{
+            flex-basis: 20%;
+            padding:10px ;
+            min-width: 200px;
+            margin-bottom: 50px;
+            transition: transform 0.6s;
+            margin: auto;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .small-container s{
+            color: rgb(163, 161, 161);
+        }
+        .small-container p{
+            font-size: 14px;
+        }
+        .small-container:hover{
+            transform: translateY(-8px);
+            cursor:pointer;
+            border: 1px solid;
+            box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Styling of the image  in small-container */
+        .small-container img{
+            width: 200px;
+            height: 200px;
+        }
+
+        /* Styling heading 4 */
+        h4{
+            font-weight: normal;
+        }
+
+        /* Styling star rating */
+        .rating .fa{
+            color: grey;
+        }
+        .cart{
+            padding: 10px;
+            font-size: 15px;
+            border: none;
+            border-radius: 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        
+        .cart:hover{
+            border: 1px solid grey;
+        }
+        /* Styling offer section */
+        .offer{
+            margin-top: 80px;
+            padding: 30px 0;
+            background: radial-gradient(rgb(255, 255, 255), rgb(124, 122, 122))
+        }
+        .offer .container1{
+            display: flex;
+        }
+        .offer img{
+            width: 600px;
+            height: 600px;
+        }
+
+        .offer h1{
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 80px;
+        }
+        
+        .offer .description{
+            position: relative;
+            margin: 80px 0 0 0;
+        }
+        .offer .description p{
+            color: grey;
+        }
+        .offer .description h3{
+            color: grey;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Styling of Offer button */
+        .btn{
+            margin-top: 20px;
+            width: 150px;
+            border: none;
+            height: 45px;
+            font-size: 15px;
+            font-weight: 600;  
+            border-radius: 35px; 
+        }
+        .btn:hover{
+            background-color: rgb(184, 180, 180);
+            box-shadow: 2px 2px 15px rgba(255, 255, 255, 0.5);
+        }
+        .btn a{
+            text-decoration: none;
+            color: black;
+        }
+        .btn a:hover{
+            letter-spacing: 2px;
+            font-size: 16px ;
+            border: 1px;
+            color: rgb(255, 255, 255);
+            
+        }
+
+        /* Styling footer section */
+        footer{
+            height: 50px;
+        }
+        .socials ul li a{
+            filter: none;
+        }
+        
+    </style>
+    <!-- Navigation Bar section  -->
+    <header >
+        <div id="navbar" class="sticky">
+            <nav >
+                <!-- Division for Name logo -->
+                <div class="logo">E-commerce</div>
+                <ul>
+                    <!-- Division for Navigation Bar: listings -->
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a class="active" href="Product.html">Product</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="Research.html">Reference</a></li>
+                </ul>
+                <!-- Shopping bag icon -->
+                <i class="fas fa-shopping-bag"></i>   
+            </nav>
+        </div>
+    </header>
+
+    
+    <!-- Section for main banner with js -->
+    <section class="banner">
+        <script type="text/javascript">
+            // Function for scroll
+            window.addEventListener("scroll", function(){
+                var navbar = document.querySelector("#navbar");
+                // Adding Toggle method
+                navbar.classList.toggle("sticky", window.scrollY > 0);
+            })
+        </script>
+    </section>
+    <!-- Section for search box -->
+    <div class="search-box">
+        <img src="./Images/mg.png">
+        <input  style="width: 1125px; height: 50px; margin-left: 30px; padding-left: 60px; background-color: rgb(243, 242, 242); border:1px solid grey; border-radius: 30px; outline: none;" placeholder="Search for items"> 
+        <script>
+            function al(){
+                alert("You are not allowed to search any items")
+            }
+        </script>
+    </div>
+    <!-- Section for latest products -->
+    <section>
+        <h2>Latest Products</h2>
+        <!-- Division for container containing product contents -->
+        <div class="container">
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/phone1.jpg">
+                <h4><b>Phone</b></h4>
+                <!-- Price of the product -->
+                <p>$1200.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$1500.00</s>  -30%</p>
+                <!-- Division for star rating of the product -->
+                <div class="rating">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                    <script>
+                        // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                    </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/headphone1.webp">
+                <!-- Price of the product -->
+                <h4><b>Headphone</b></h4><p>$300.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$400.00</s>  -20%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/laptop2.jpg">
+                <h4><b>Laptop</b></h4>
+                <!-- Price of the product -->
+                <p>$1500.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$2000.00</s>  -35%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/watch1.jpg">
+                <h4><b>Smart Watch</b></h4>
+                <!-- Price of the product -->
+                <p>$1000.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$1200.00</s>  -20%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                }
+                </script>
+            </div>
+        </div>
+
+        <!-- Feautured Products  -->
+        <h2>Featured Products</h2>
+        <div class="container">
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/tv1.jpg">
+                <h4><b>Smart TV</b></h4>
+                <!-- Price of the product -->
+                <p>$1200.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$1400.00</s>  -10%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/micro1.jpg">
+                <h4><b>Microwave</b></h4>
+                <!-- Price of the product -->
+                <p>$300.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$500.00</s>  -20%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/wash1.png">
+                <h4><b>Washing Machine</b></h4>
+                <!-- Price of the product -->
+                <p>$800.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$900.00</s>  -10%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/watch2.jpg">
+                <h4><b>Smart Watch</b></h4>
+                <!-- Price of the product -->
+                <p>$900.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$950.00</s>  -5%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/phone2.webp" style= "width:220px">
+                <h4><b>Phone</b></h4>
+                <!-- Price of the product -->
+                <p>$1200.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$1200.00</s>  -30%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/cpu1.jpg">
+                <h4><b>Built CPU </b></h4>
+                <!-- Price of the product -->
+                <p>$800.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$1200.00</s>  -40%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/headphone2.jpg">
+                <h4><b>Headphone </b></h4>
+                <!-- Price of the product -->
+                <p>$1200.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$1300.00</s>  -10%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                </script>
+            </div>
+
+            <!-- Division for individual product contents -->
+            <div class="small-container">
+                <!-- Image of the product -->
+                <img src="./Images/speaker.jpeg">
+                <h4><b>Home Theatre</b></h4>
+                <!-- Price of the product -->
+                <p>$1800.00</p>
+                <!-- Original Price of the product -->
+                <p style="color: red;"><s style="color: rgb(184, 182, 182);">$1900.00</s>  -10%</p>
+                <div class="rating">
+                    <!-- Division for star rating of the product -->
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                </div>
+                <button class="cart" onclick="func()"> Add to cart</button>
+                <script>
+                    // This is the function for alert
+                    function func(){
+                        alert("Already sold")
+                    }
+                </script>
+            </div>
+    </section>
+
+    <!-- Section for offer -->
+    <section>
+            <div class="offer">
+                <!-- Offer heading -->
+                <h1><i>Save upto <b style="color: red;">25%</b> on this PC</i></h1>
+                <div class="container1">
+                    <!-- Offer Product Image -->
+                    <img src="./Images/cpu2.png" class="off-img">
+                    <!-- Division for offer product desciption -->
+                    <div class="description">
+                        <h1 style="font-family: 'Poppins'; font-size: 80px;">Gaming PC</h1>
+                        <p style="margin: 30px 0 30px 0;">This PC is one of the best in the market with high demands. Make sure you get to explore its features</p>
+                            <h3> OS:  Windows 10</h3><br>
+                            <h3>CPU: Intel® Core™ i5-6600K or better</h3><br>
+                            <h3>RAM: 8GB of system memory</h3><br>
+                            <h3>Graphics Card: NVIDIA GeForce GTX 970</h3><br>
+                            <h3>Storage: At least 20GB of available space</h3>
+                            <button class="btn" onclick="off()"><a href="Product.html">Shop Now</a></button>
+                                <script>
+                                // This is the function for alert
+                                function off(){
+                                    alert("Sorry! Not available at the moment")
+                                }
+                                </script>
+                            
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    <!-- Footer Section -->
+    <footer>
+        <!--Social Medias -->
+        <div class="socials">
+            <ul>
+                <!-- Logo Image of facebook, instagram and twitter -->
+                <li><a href="https://www.facebook.com/aanirudraa/"><img src="./Images/img1.png"></a></li>
+                <li><a href="https://www.instagram.com/aanirudraa/"><img src="./Images/img2.png"></a></li>
+                <li><a href="https://twitter.com/?lang=en"><img src="./Images/img3.png"></a></li>
+            </ul>
+            <!-- Trademarks -->
+            <p style="color: black;">&copy; 2022 Anirudra Mohan Shrestha. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

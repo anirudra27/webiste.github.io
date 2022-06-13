@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coursework 3">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Anirudra Mohan Shrestha">
+    <link  rel="stylesheet" type="text/css" href="./CSS/style.css">
+    <script src="https://kit.fontawesome.com/c80159345b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <title>Blog</title>
+</head>
+<body>
+    <style>
+        body{
+            background: black;
+            min-height: 300vh;
+        }
+
+        /* Positioning of banner */
+        .banner{
+            position: relative;
+            width:100%;
+            height: 150vh;
+            top: -150px;
+            background: url("Images/laptop1.jpg");
+            background-size:cover ;
+        }
+
+        /* Styling of navigation after implying js */
+        #navbar ul li a.active{
+            letter-spacing: 3px;
+            font-size: 25px;
+            color: rgb(238, 215, 12);
+            cursor: pointer;
+        }
+
+        #navbar.sticky{
+            padding: 5px 100px;
+            background: #fff;
+        }
+        #navbar.sticky .logo{
+            color: black;
+        }
+        #navbar.sticky ul li a{
+            color: black;
+        }
+        #navbar ul li a.active{
+            letter-spacing: 3px;
+            font-size: 25px;
+            color: rgb(238, 215, 12);
+            cursor: pointer;
+        }
+        #navbar.sticky ul li a:hover{
+            color: rgb(238, 215, 12);
+            cursor: pointer;
+        }
+        #navbar.sticky .fas{
+            color: black ;
+        }
+
+        /* Styling main content-blog of the website */
+        .content{
+            height: 980px;
+            margin: 50px;
+            padding: 30px;
+            background-color: rgba(78, 78, 77, 0.3);
+            border-radius: 10px;;
+        }
+
+        /* Personal Desciption of the author of the blog */
+        .description{
+            color: white;
+            display: flex;
+            justify-content: space-between;
+        }
+        .description ul{
+            display: flex;
+        }
+        .description ul li{
+            list-style: none;
+            padding-right: 20px;
+        }
+        .description ul li a{
+            display: inline-block;
+            padding-right: 10px;
+        }
+        .description ul li a:hover{    
+            transition: 0.2s;
+            transform: scale(0.8);
+        }
+        .description  ul li a img{
+            width: 30px;
+            height: 30px;
+            filter: invert(1);
+        }
+        .content p{
+            padding: 20px;
+            text-align: justify;
+            font-size: 20px;
+            font-family: 'Poppins';
+            color: #fff;
+        }
+
+    </style>
+    <header >
+        <!-- Division for navigation Bar within the slide -->
+        <div id="navbar" class="sticky">
+            <nav >
+                 <!-- Division for Name logo -->
+                <div class="logo">E-commerce</div>
+                <ul>
+                    <!-- Division for Navigation Bar: listings -->
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Product.html">Product</a></li>
+                    <li><a class="active" href="Blog.html">Blog</a></li>
+                    <li><a href="Contact.html">Contact Us</a></li>
+                    <li><a href="Research.html">Reference</a></li>
+                </ul>
+                <!-- Shopping bag icon -->
+                <a href="Product.html"><i class="fas fa-shopping-bag"></i></a>
+        </div>
+    </header>
+    
+    <!-- Section for main banner with js -->
+    <section class="banner">
+        <script type="text/javascript">
+            window.addEventListener("scroll", function(){
+                var navbar = document.querySelector("#navbar");
+                navbar.classList.toggle("sticky", window.scrollY > 0);
+            })
+        </script>
+    </section>
+
+    <div class="content">
+        <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ; color:#fff; text-align: center;"> Impact of Technology in our daily life</h1>
+        <!-- Author's Description -->
+        <div class="description">
+            <div style="padding-left: 20px; display: inline-block; font-family: 'Poppins', 'Segoe UI'; display: flex;">
+                <!-- Image of the author -->
+                <img src="./Images/mypic.jpg" style="width: 100px; height: 100px; border-radius: 80px;">
+                <h2 style="font-size: 20px; padding: 10px 20px 0 20px; font-weight: 200; color: #afafaf;">Anirudra<br> BIT<br> 20/01/2022</h2></h2>   
+            </div>
+            <ul>
+                <!-- Logo Image of facebook, instagram and twitter -->
+                <li><a href="https://www.facebook.com/aanirudraa/"><img src="./Images/img1.png"></a></li>
+                <li><a href="https://www.instagram.com/aanirudraa/"><img src="./Images/img2.png"></a></li>
+                <li><a href="https://twitter.com/?lang=en"><img src="./Images/img3.png"></a></li>
+            </ul>
+        </div>
+
+        <p>
+            Today’s world is known as technological world. Where ever we go, where we see there is nothing that doesn’t require technology. Technology has been an integral part of human beings for survival. Compared to 10 years ago, the advancement of invention development of technology has been insane and our human needs worked as a catalyst to it. With improvement in human resources, technologies like internet, mobile phones, laptops, artificial intelligence, robotics and many more are peaking the needs of the human existence rapidly.People rely so much on technology now days that, it is merely impossible to live a day without using any of it specially phone and internet.<br><br>
+            It is obvious that technology growing rapidly shows humongous merits in the human existence.  The fact that technology making us connect worldwide and in no seconds is remarkable. The world is in tip of our fingers. Communicating via internet and mobile phones have made our life really convenient. Similarly, now days a business doesn’t need any entity. The technological bloom have reached every corner of the world and almost everyone is accessed with mobile and internet. So, people are earning scope of doing business all over the world sitting in one place. Prime examples are ecommerce and drop shipping. Likewise, technology is being exploited in health sectors too. The use of CT scan , MRI scan, X rays and many other tools have been great help in looking inside human body and detecting issues. In addition, the banking system has solemnly changed its way of transaction, as online payment and digital payment are preferred making it easy and convenient for us. In the fast running pace of human life, technology are used for entertainment purposes as well. Recently developed Virtual Reality makes us feel as if we are living in reality of delusional world.  The movie halls use various multimedia technologies for our entertainment and better experiences. Even music nowadays use various technologies to create a more upbeat songs or Electronic Dance Music (EDM) that are being popular nowadays. The convenience and easement have been incentive for development of new technology every day and fulfilling our superficial needs to live better life. <br><br>
+            However, everything has both positive and negative consequences. People nowadays have gotten so reliant on technology that managing their life without it will be extremely difficult. People currently have become so engrossed in the technical world that they have forgotten about the actual world. People are entirely oblivious to reality except for the fact that they are aware of all around the world through internet. Friends and families used to make memories by playing and having fun before computers were introduced. However, nowadays, whenever friends and family get together, everyone is engaged in their phones. People are also misusing technology for evil purposes as it develops at a rapid pace. People are hacking the system and taking people's money since banks have digital transactions. 
+            We are virtually social and close because of technology, yet in fact, we are extremely far apart. Despite this, technology has some extremely negative implications on human health. Too much exposure of our skin in X rays and MRI scan can lead to lethal cancer diseases and other hazardous illness.   If we are exposed to it too much to electronic screens, it may cause significant harm to our eyes. Likewise, people have become more sedentary as a result of technological advancements. Due to this people do not get enough exercise as a result of this, which leads to a variety of disorders in their bodies. Many businesses are being held over digital platforms and their value are ranked digitally leading to theft of intellectual property, accomplished using technological means. Since everything is online and every system are bound to be digital, the risks of invasion of our digital and information are equally high due to malicious unethical acts.<br><br>
+            Therefore technology has been immensely developed in couple of decades, it binds every individual in a small circle. Living a better life with maximum facilitation could be desirable but ramification of fulfilling those desires also come at a cost. It is us to decide whether to take technology as an ally or make fore driving against us.<br> <br>
+
+        </p>
+    </div>
+    
+    <footer>
+        <!-- Social Medias -->
+        <div class="socials">
+            <ul>
+                <!-- Logo Image of facebook, instagram and twitter -->
+                <li><a href="https://www.facebook.com/aanirudraa/"><img src="./Images/img1.png"></a></li>
+                <li><a href="https://www.instagram.com/aanirudraa/"><img src="./Images/img2.png"></a></li>
+                <li><a href="https://twitter.com/?lang=en"><img src="./Images/img3.png"></a></li>
+            </ul>
+            <!-- Trademarks -->
+            <p style="color: white;">&copy; 2022 Anirudra Mohan Shrestha. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
